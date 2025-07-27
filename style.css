@@ -1,0 +1,208 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  /* Vibrant pastel gradient background */
+  background: linear-gradient(135deg, #d4f5e9, #ffe2e2, #dcd7f7);
+  color: #333;
+}
+
+/* Container layout */
+.container {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(45, 211, 111, 0.3);
+  border-radius: 16px;
+  margin: 20px;
+  background: #fffefc;
+}
+
+/* Left panel */
+.left-panel {
+  width: 40%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top-left-radius: 16px;
+  border-bottom-left-radius: 16px;
+  background: linear-gradient(135deg, #2dd36f 0%, #9f7aea 100%);
+  overflow: visible;
+  padding: 20px;
+}
+
+/* Circular photo styling */
+.left-panel img {
+  border-radius: 50%;
+  width: 240px;
+  height: 240px;
+  object-fit: cover;
+  box-shadow: 0 8px 20px rgba(45, 211, 111, 0.5);
+  border: 5px solid #ff6b6b;
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+  z-index: 10;
+  background: white;
+}
+
+.left-panel img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(255, 107, 107, 0.8);
+}
+
+/* Right panel */
+.right-panel {
+  width: 60%;
+  background: #fffefc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 60px;
+  position: relative;
+  border-top-right-radius: 16px;
+  border-bottom-right-radius: 16px;
+  border: 3px dashed;
+  border-image-slice: 1;
+  border-width: 3px;
+  /* Coral to lavender gradient border */
+  border-image-source: linear-gradient(45deg, #ff6b6b, #9f7aea);
+  box-shadow: inset 0 0 20px rgba(255, 107, 107, 0.2);
+  transition: box-shadow 0.4s ease;
+}
+
+.right-panel:hover {
+  box-shadow: inset 0 0 35px rgba(159, 122, 234, 0.4);
+}
+
+.content {
+  max-width: 520px;
+  text-align: left;
+}
+
+/* Heading gradient text: coral to lavender */
+.content h1 {
+  font-size: 3.8rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  background: linear-gradient(45deg, #ff6b6b, #9f7aea);
+  -webkit-text-fill-color: transparent;
+  transition: background-position 0.5s ease;
+  background-size: 200% 200%;
+  cursor: default;
+}
+
+.content h1:hover {
+  background-position: right center;
+}
+
+/* About paragraph with dashed left border in coral */
+.about {
+  font-size: 1.3rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  color: #555;
+  border-left: 6px dashed #ff6b6b;
+  padding-left: 18px;
+  transition: border-color 0.3s ease;
+  font-weight: 500;
+}
+
+.right-panel:hover .about {
+  border-color: #9f7aea;
+}
+
+/* Social links base color: mint green */
+.social-links a {
+  margin-right: 28px;
+  font-size: 2.3rem;
+  color: #2dd36f; /* mint green base */
+  transition: color 0.35s ease, transform 0.35s ease, text-shadow 0.35s ease;
+  border-radius: 10px;
+  padding: 12px;
+  display: inline-block;
+  cursor: pointer;
+  user-select: none;
+}
+
+.social-links a:hover {
+  transform: scale(1.25);
+  background: rgba(45, 211, 111, 0.15);
+  box-shadow: 0 0 15px rgba(45, 211, 111, 0.7);
+  text-shadow: 0 0 10px rgba(45, 211, 111, 0.9);
+  border-radius: 10px;
+}
+
+/* Specific social colors on hover */
+/* Facebook coral */
+.social-links .facebook:hover {
+  color: #ff6b6b;
+  text-shadow: 0 0 12px #ff6b6b;
+  box-shadow: 0 0 15px #ff6b6b;
+}
+
+/* Instagram lavender */
+.social-links .instagram:hover {
+  color: #9f7aea;
+  text-shadow: 0 0 12px #9f7aea;
+  box-shadow: 0 0 15px #9f7aea;
+}
+
+/* TikTok pastel green */
+.social-links .tiktok:hover {
+  color: #2dd36f;
+  text-shadow: 0 0 12px #2dd36f;
+  box-shadow: 0 0 15px #2dd36f;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    margin: 10px;
+    height: auto;
+  }
+
+  .left-panel,
+  .right-panel {
+    width: 100%;
+    height: 50vh;
+    border-radius: 0;
+    border: none;
+    padding: 20px;
+  }
+
+  .left-panel {
+    justify-content: center;
+  }
+
+  .left-panel img {
+    width: 180px;
+    height: 180px;
+    border-width: 4px;
+  }
+
+  .right-panel {
+    padding: 30px 25px;
+    box-shadow: none;
+  }
+
+  .content {
+    text-align: center;
+  }
+
+  .about {
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .social-links a {
+    margin-right: 18px;
+  }
+}
